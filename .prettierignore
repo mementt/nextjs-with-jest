@@ -1,0 +1,9 @@
+.lintstagedrc.js
+.next
+node_modules
+.eslintrc.json
+next.config.js
+types.d.ts
+tsconfig.json
+jest.config.js
+jest.setup.js
