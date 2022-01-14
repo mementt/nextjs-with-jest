@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react'
-import Home from '@/pages/index'
+import { render, screen, fireEvent } from '@testing-library/react';
+import Home from '@/pages/index';
 
-describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Home />)
+describe('Home Page Test', () => {
+  it('renders a HomePage', () => {
+    render(<Home />);
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
+    expect(screen.getByText('Toggle Link')).toBeInTheDocument();
+    expect(screen.getByText('Go To About Page')).toBeInTheDocument();
 
-    expect(heading).toBeInTheDocument()
-  })
-})
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.queryByText('Go To About Page')).not.toBeInTheDocument();
+  });
+});

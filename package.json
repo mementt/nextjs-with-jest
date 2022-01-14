@@ -7,7 +7,11 @@
     "start": "next start",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "next": "latest",
@@ -26,11 +30,8 @@
     "husky": "^7.0.4",
     "jest": "27.4.5",
     "lint-staged": "^12.1.7",
-    "typescript": "4.5.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test"
-    }
+    "typescript": "4.5.4",
+    "cypress": "8.2.0",
+    "start-server-and-test": "1.13.1"
   }
 }

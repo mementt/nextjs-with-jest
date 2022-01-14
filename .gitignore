@@ -8,6 +8,10 @@
 # testing
 /coverage
 
+# cypress(e2e test)
+cypress/screenshots
+cypress/videos
+
 # next.js
 /.next/
 /out/
